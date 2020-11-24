@@ -19,7 +19,7 @@ body {
 }
 
 .wrapper {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     padding: 80px 0px;
 }
@@ -29,7 +29,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 23px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -39,6 +39,13 @@ body {
     top: 0; 
     background-color: white;
     width: 100vw;
+}
+
+input#control-nav {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
 }
 
 h1 {
@@ -53,10 +60,10 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 450px;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 500;
+    width: 470px;
 }
 
 .menubutton {
@@ -207,3 +214,182 @@ footer {
 #botao-enviar-contato {
     width: 600px;
 }
+
+/* media query*/
+
+/* mobile*/
+
+@media (max-width: 430px) {
+    body {
+        font-size: 16px;
+        margin-top: 60px;
+    }
+    
+    .wrapper {
+        max-width: 100%;
+        margin: auto;
+        padding: 60px 3%;
+    }
+
+    .logo-optme {
+        width: 100px;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 220px;
+        border-left: 1px solid #ccc;
+        background: #fff;
+        overflow-x: auto;
+        z-index: 2;
+        transition: all 500ms ease;
+        transform: translate(100%, 0);
+    }
+
+    .control-nav {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        display: block;
+        width: 30px;
+        padding: 5px 0;
+        border: solid #0F456A;
+        border-width: 3px 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .control-nav:before {
+        content: "";
+        display: block;
+        height: 3px;
+        background: #0F456A;
+    }
+
+    .control-nav-close {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        z-index: 1;
+        transition: all 500ms ease;
+        transform: translate(100%, 0);
+    }
+
+    input#control-nav {
+        display: block;
+    }
+
+    input#control-nav:focus ~ .control-nav {
+        border-color: #000;
+        box-shadow: 0px 0px 9px rgba(0,0,0,0.3);
+    }
+    
+    input#control-nav:focus ~ .control-nav:before {
+        background: #000;
+    }
+
+    input[type="checkbox"]:checked ~ nav, input[type="checkbox"]:checked ~ .control-nav-close {
+        transform: translate(0, 0);
+    }
+
+    .header-menu {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .menu {
+        display: block;
+        font-size: 20px;
+        width: 220px;
+    }
+
+    .menu li {
+        padding: 20px 15px;
+        width: 215px;
+        border-bottom: 1px solid #0F456A;
+    }
+
+    .capa {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .capa-texto {
+        width: 100%;
+    }
+
+    .capa-texto h2 {
+        font-size: 30px;
+    }
+
+    .capa-texto p {
+        margin: 15px 0;
+    }
+
+    .capa-img {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .botao-header {
+        width: 100%;
+    }
+
+    .flex-container {
+        flex-flow: column;
+    }
+
+    .titulo-section {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .texto-sobremim {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .img-sobremim {
+        width: 100%;
+    }
+
+    .flex-item {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .flex-item h4 {
+        margin: 5px 0 5px;
+    }
+
+    #ilustração-diferencial {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .flex-formulario {
+        display: block;
+        width: 100%;
+    }
+
+    .flex-formulario input {
+        width: 100%;
+    }
+
+    #message {
+        width: 100%;
+    }
+
+    #botao-enviar-contato {
+        width: 100%;
+    }
+    
+}
+
+
